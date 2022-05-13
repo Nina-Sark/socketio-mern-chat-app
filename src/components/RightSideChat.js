@@ -200,7 +200,7 @@ export const RightSideChat = () => {
               <AvatarContainer>
                 <Avatar src={user?.avatar} />
                 <div>
-                  <span>{user?.name}</span>
+                  <span style={{ textOverflow: "ellipsis" }}>{user?.name}</span>
                   <small>
                     {isActive
                       ? `Active now`
@@ -218,7 +218,7 @@ export const RightSideChat = () => {
                 <div>
                   <Typography
                     variant="h5"
-                    sx={{ "&": { color: theme.primaryAccentColor } }}
+                    sx={{ "&": { color: theme.primaryAccentColor, textOverflow: "ellipsis"  } }}
                   >
                     {selectedChat?.chatName}
                   </Typography>
