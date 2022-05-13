@@ -43,6 +43,7 @@ export const RightSideChat = () => {
 
   const isSelected = Boolean(chatId);
   const matches = useMediaQuery("(max-width : 1100px)");
+  const matchesMobile = useMediaQuery("(max-width : 500px)");
 
   const {
     selectedChat,
@@ -200,7 +201,7 @@ export const RightSideChat = () => {
               <AvatarContainer>
                 <Avatar src={user?.avatar} />
                 <div>
-                  <span style={{ textOverflow: "ellipsis" }}>{user?.name}</span>
+                  <span>{user?.name}</span>
                   <small>
                     {isActive
                       ? `Active now`
@@ -216,12 +217,9 @@ export const RightSideChat = () => {
               >
                 <Avatar src={selectedChat?.groupChatImage?.url} />
                 <div>
-                  <Typography
-                    variant="h5"
-                    sx={{ "&": { color: theme.primaryAccentColor, textOverflow: "ellipsis"  } }}
-                  >
+                  <span style={{ color: theme.primaryAccentColor }}>
                     {selectedChat?.chatName}
-                  </Typography>
+                  </span>
                 </div>
               </AvatarContainer>
             )}
