@@ -43,7 +43,6 @@ export const RightSideChat = () => {
 
   const isSelected = Boolean(chatId);
   const matches = useMediaQuery("(max-width : 1100px)");
-  const matchesMobile = useMediaQuery("(max-width : 500px)");
 
   const {
     selectedChat,
@@ -217,9 +216,12 @@ export const RightSideChat = () => {
               >
                 <Avatar src={selectedChat?.groupChatImage?.url} />
                 <div>
-                  <span style={{ color: theme.primaryAccentColor }}>
+                  <Typography
+                    variant="h5"
+                    sx={{ "&": { color: theme.primaryAccentColor } }}
+                  >
                     {selectedChat?.chatName}
-                  </span>
+                  </Typography>
                 </div>
               </AvatarContainer>
             )}
